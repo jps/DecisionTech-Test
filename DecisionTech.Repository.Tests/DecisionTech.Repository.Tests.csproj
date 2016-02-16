@@ -57,6 +57,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DecisionTech.Model\DecisionTech.Model.csproj">
+      <Project>{9e1d1ea9-6fa4-4fab-b7d2-36b7d35d7e69}</Project>
+      <Name>DecisionTech.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DecisionTech.Repository\DecisionTech.Repository.csproj">
+      <Project>{84fdd4c0-0d47-45f7-903f-7ab0ac56744b}</Project>
+      <Name>DecisionTech.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
