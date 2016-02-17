@@ -10,7 +10,7 @@ namespace DecisionTech.Tests.Common
             PurchaseProduct = FakeProducts.Milk,
             DiscountProduct = FakeProducts.Milk,
             PercentDiscount = 1.00f,
-            RequiredPurchaseQuantity = 3
+            RequiredPurchaseQuantity = 4
         };
 
         public static Offer BuyBreadGetButterDiscountOffer() => new Offer()

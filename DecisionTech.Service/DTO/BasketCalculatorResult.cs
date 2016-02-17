@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DecisionTech.Model;
-
-namespace DecisionTech.Service.DTO
+﻿namespace DecisionTech.Service.DTO
 {
     public class BasketCalculatorResult
     {
-        private IList<Offer> AppliedOffers { get; set; }
-        private Basket Basket { get; set; }
+        public readonly decimal Gross;
 
-        public decimal Gross { get; set; }
+        public BasketCalculatorResult(decimal gross, decimal discount)
+        {
+            Gross = gross;
+            Discount = discount;
+        }
 
-        public decimal Discount { get; set; }
+        public readonly decimal Discount;
 
-        public decimal Net { get; set; }
+        public decimal Net => Gross + Discount;
     }
 }

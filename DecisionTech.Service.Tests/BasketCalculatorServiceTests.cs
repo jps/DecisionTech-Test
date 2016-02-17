@@ -13,29 +13,39 @@ namespace DecisionTech.Service.Tests
     public class BasketCalculatorServiceTests
     {
         //SUT
-        private readonly IBasketCalculatorService _basketCalculatorService;
+        private IBasketCalculatorService _basketCalculatorService;
         
         //Dependencies
-        private readonly IProductRepository _productRepository;
-        private readonly IOfferRepository _offerRepository;
+        private IProductRepository _productRepository;
+        private IOfferRepository _offerRepository;
 
         public BasketCalculatorServiceTests()
         {
             _productRepository = MockRepository.GenerateMock<IProductRepository>();
+            
+
+            
+        }
+
+        [SetUp]
+        public void Setup()
+        {
             _offerRepository = MockRepository.GenerateMock<IOfferRepository>();
 
-            _basketCalculatorService = new BasketCalculatorService(_productRepository, _offerRepository);
+            _basketCalculatorService = new BasketCalculatorService(_offerRepository);
+        }
 
-            //setup shortcuts to data
-            var fakeProductData = FakeProducts.Data();
-            var fakeOfferData = FakeOffers.Data();
-
+        [TearDown]
+        public void TearDown()
+        {
+            _offerRepository = null;
         }
 
         [Test]
         public void BasketCalculatorService_Calculate_When_No_Discounts_Applied_Correct_Total()
         {
-            _offerRepository.Stub(o => o.GetOffersByPurchasedProductIds()).IgnoreArguments()
+            _offerRepository.Stub(o => o.GetOffersByPurchasedProductIds())
+                .IgnoreArguments()
                 .Return(FakeOffers.Data());
             
             //Arrange
@@ -116,13 +126,8 @@ namespace DecisionTech.Service.Tests
                 {
                     new BasketItem()
                     {
-                        Product = FakeProducts.Butter,
-                        Quantity = 2
-                    },
-                    new BasketItem()
-                    {
-                        Product = FakeProducts.Bread,
-                        Quantity = 2
+                        Product = FakeProducts.Milk,
+                        Quantity = 4
                     }
                 }
             };
@@ -155,7 +160,7 @@ namespace DecisionTech.Service.Tests
                     new BasketItem()
                     {
                         Product = FakeProducts.Bread,
-                        Quantity = 2
+                        Quantity = 1
                     },
                     new BasketItem()
                     {
