@@ -1,7 +1,9 @@
-﻿namespace DecisionTech.Repository.Interfaces
+﻿using DecisionTech.Model;
+
+namespace DecisionTech.Repository.Interfaces
 {
-    public interface IProductRepository
+    public interface IProductRepository : IRepository<Product, int>
     {
-        //Empty
+        Product GetByName(string name); 
     }
 }

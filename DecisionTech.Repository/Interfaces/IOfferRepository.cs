@@ -1,6 +1,6 @@
 ﻿namespace DecisionTech.Repository.Interfaces
 {
-    public interface IOfferInterface
+    public interface IOfferRepository
     {
     }
 }

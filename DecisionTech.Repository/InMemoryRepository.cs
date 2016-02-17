@@ -20,7 +20,7 @@ namespace DecisionTech.Repository
 
         protected InMemoryRepository()
         {
-            //Empty.. for now
+            Collection = new List<T>();
         }
         
         /*  This isn't great... but should be ok for this test.. Could either inject a key generator based on typeof 

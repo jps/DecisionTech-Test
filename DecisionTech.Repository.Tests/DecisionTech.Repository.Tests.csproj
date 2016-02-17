@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InMemoryBaseRepositoryTest.cs" />
+    <Compile Include="ProductRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

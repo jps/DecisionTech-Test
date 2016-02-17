@@ -48,9 +48,9 @@
     <Compile Include="InMemoryRepository.cs" />
     <Compile Include="BasketRepository.cs" />
     <Compile Include="Interfaces\IBasketRepository.cs" />
-    <Compile Include="Interfaces\IOfferInterface.cs" />
+    <Compile Include="Interfaces\IOfferRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
-    <Compile Include="OfferInterface.cs" />
+    <Compile Include="OfferRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
