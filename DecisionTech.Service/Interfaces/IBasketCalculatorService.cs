@@ -3,7 +3,7 @@ using DecisionTech.Service.DTO;
 
 namespace DecisionTech.Service.Interfaces
 {
-    public interface IBasketCalculator
+    public interface IBasketCalculatorService
     {
         BasketCalculatorResult Calculate(Basket basket);
     }

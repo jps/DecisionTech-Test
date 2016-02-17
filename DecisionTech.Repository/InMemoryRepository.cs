@@ -17,12 +17,18 @@ namespace DecisionTech.Repository
         private int _idCounter;
 
         private readonly IFixture _fixture = new Fixture();
-
+        
         protected InMemoryRepository()
         {
             Collection = new List<T>();
         }
-        
+
+        protected InMemoryRepository(ICollection<T> collection)
+        {
+            Collection = collection;
+        }
+
+
         /*  This isn't great... but should be ok for this test.. Could either inject a key generator based on typeof 
             TKey or make this class + method abstract and implement in sub classes for each key type we require. */
         protected TKey Nextval()

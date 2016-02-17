@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E60DB63A-E6D8-460E-806A-9D2467E04325}</ProjectGuid>
+    <ProjectGuid>{5878F21F-7854-4FAF-92B7-D36F530CD714}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DecisionTech.Service</RootNamespace>
-    <AssemblyName>DecisionTech.Service</AssemblyName>
+    <RootNamespace>DecisionTech.Tests.Common</RootNamespace>
+    <AssemblyName>DecisionTech.Tests.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,14 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentAssertions, Version=4.2.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentAssertions.4.2.2\lib\net45\FluentAssertions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FluentAssertions.Core, Version=4.2.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentAssertions.4.2.2\lib\net45\FluentAssertions.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,22 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\BasketCalculatorResult.cs" />
-    <Compile Include="Interfaces\IBasketCalculatorService.cs" />
-    <Compile Include="BasketCalculatorService.cs" />
+    <Compile Include="FakeOffers.cs" />
+    <Compile Include="FakeProducts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DecisionTech.Model\DecisionTech.Model.csproj">
       <Project>{9e1d1ea9-6fa4-4fab-b7d2-36b7d35d7e69}</Project>
       <Name>DecisionTech.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DecisionTech.Repository\DecisionTech.Repository.csproj">
-      <Project>{84fdd4c0-0d47-45f7-903f-7ab0ac56744b}</Project>
-      <Name>DecisionTech.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecisionTech.Service.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecisionTech.Repository.Tests", "DecisionTech.Repository.Tests\DecisionTech.Repository.Tests.csproj", "{2235D627-32CA-4332-9317-4B03D9449273}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecisionTech.Tests.Common", "DecisionTech.Tests.Common\DecisionTech.Tests.Common.csproj", "{5878F21F-7854-4FAF-92B7-D36F530CD714}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2235D627-32CA-4332-9317-4B03D9449273}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2235D627-32CA-4332-9317-4B03D9449273}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2235D627-32CA-4332-9317-4B03D9449273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5878F21F-7854-4FAF-92B7-D36F530CD714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5878F21F-7854-4FAF-92B7-D36F530CD714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5878F21F-7854-4FAF-92B7-D36F530CD714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5878F21F-7854-4FAF-92B7-D36F530CD714}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

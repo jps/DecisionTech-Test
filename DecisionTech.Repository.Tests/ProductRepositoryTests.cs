@@ -1,4 +1,5 @@
 ﻿using DecisionTech.Repository.Interfaces;
+using DecisionTech.Tests.Common;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -13,7 +14,7 @@ namespace DecisionTech.Repository.Tests
 
         public ProductRepositoryTests()
         {
-            _productRepository = new ProductRepository();
+            _productRepository = new ProductRepository(FakeProducts.Data());
         }
 
         #region GetByName

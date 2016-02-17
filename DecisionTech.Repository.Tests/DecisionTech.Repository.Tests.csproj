@@ -67,6 +67,10 @@
       <Project>{84fdd4c0-0d47-45f7-903f-7ab0ac56744b}</Project>
       <Name>DecisionTech.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DecisionTech.Tests.Common\DecisionTech.Tests.Common.csproj">
+      <Project>{5878f21f-7854-4faf-92b7-d36f530cd714}</Project>
+      <Name>DecisionTech.Tests.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
