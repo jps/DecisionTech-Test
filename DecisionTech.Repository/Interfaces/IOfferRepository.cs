@@ -5,6 +5,6 @@ namespace DecisionTech.Repository.Interfaces
 {
     public interface IOfferRepository
     {
-        IEnumerable<Offer> GetOffersByPurchasedProducts(params int[] products);
+        IEnumerable<Offer> GetOffersByPurchasedProductIds(params int[] productIds);
     }
 }

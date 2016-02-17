@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DecisionTech.Model;
 using DecisionTech.Repository.Interfaces;
 
@@ -11,9 +12,11 @@ namespace DecisionTech.Repository
             //Empty
         }
 
-        public IEnumerable<Offer> GetOffersByPurchasedProducts(params int[] products)
+        public IEnumerable<Offer> GetOffersByPurchasedProductIds(params int[] productIds)
         {
-            throw new System.NotImplementedException();
+            var distinctProductIds = productIds.Distinct();
+
+            return Collection.Where(o => distinctProductIds.Contains(o.PurchaseProduct.Id));
         }
     }
 }
