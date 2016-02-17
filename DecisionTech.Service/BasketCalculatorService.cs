@@ -18,8 +18,6 @@ namespace DecisionTech.Service
 
         public BasketCalculatorResult Calculate(Basket basket)
         {
-            
-
             var gross = basket.BasketItems.Sum(basketItem => basketItem.Product.Cost*basketItem.Quantity);
 
             var discount = CalculateDiscount(basket);
@@ -27,7 +25,7 @@ namespace DecisionTech.Service
             return new BasketCalculatorResult(gross, discount);
         }
 
-        //I've omitted checking for duplicate items in basket. we assume each product row appears once.             
+        //I've omitted checking for duplicate items in basket. we assume each product row appears only once.             
         private decimal CalculateDiscount(Basket basket)
         {
             var discount = 0.0m;
@@ -37,9 +35,15 @@ namespace DecisionTech.Service
                 var purchaseOfferItem = basket.BasketItems.Single(bi => bi.Product.Id == offer.PurchaseProduct.Id);
                 var discountOfferItem = basket.BasketItems.SingleOrDefault(bi => bi.Product.Id == offer.DiscountProduct.Id);
 
-                var offerMultiplier = purchaseOfferItem.Quantity/offer.RequiredPurchaseQuantity;
+                if(discountOfferItem == null)
+                    continue;
 
-                if (offerMultiplier > 0 && discountOfferItem != null)
+                var offerMultiplier = purchaseOfferItem.Quantity/offer.RequiredPurchaseQuantity;
+                offerMultiplier = offerMultiplier < discountOfferItem.Quantity
+                        ? offerMultiplier
+                        : discountOfferItem.Quantity;
+
+                if (offerMultiplier > 0)
                 {
                     discount -= offerMultiplier*(offer.DiscountProduct.Cost*(decimal) offer.PercentDiscount);
                 }

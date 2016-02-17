@@ -5,9 +5,10 @@ using DecisionTech.Model;
 using DecisionTech.Repository.Interfaces;
 using Ploeh.AutoFixture;
 
-
 namespace DecisionTech.Repository
 {
+    //May have got a little carried away here.. had planned on implementing a test application that would make more
+    //use of the features in here but time is running a little short so have decided to omit. 
     public abstract class InMemoryRepository<T,TKey> : IRepository<T, TKey> 
         where T: class, IEntity<TKey>
         where TKey: struct, IEquatable<TKey>
@@ -28,7 +29,6 @@ namespace DecisionTech.Repository
             Collection = collection;
         }
 
-
         /*  This isn't great... but should be ok for this test.. Could either inject a key generator based on typeof 
             TKey or make this class + method abstract and implement in sub classes for each key type we require. */
         protected TKey Nextval()
@@ -41,15 +41,11 @@ namespace DecisionTech.Repository
             return _fixture.Create<TKey>();
         } 
 
-        public T GetById(TKey id)
-        {
-            return Collection.SingleOrDefault(entity => entity.Id.Equals(id));
-        }
+        public T GetById(TKey id) => Collection.SingleOrDefault(entity => entity.Id.Equals(id));
 
-        public IEnumerable<T> GetManyByIds(params TKey[] ids)
-        {
-            return Collection.Where(entity => ids.Contains(entity.Id));
-        }
+        public IEnumerable<T> GetManyByIds(params TKey[] ids) => Collection.Where(entity => ids.Contains(entity.Id));
+
+        public int Count() => Collection.Count;
 
         public T Add(T entity)
         {
@@ -57,9 +53,7 @@ namespace DecisionTech.Repository
             Collection.Add(entity);
             return entity;
         }
-
-        public int Count() => Collection.Count;
-
+        
         public void RemoveById(TKey id)
         {
             var objectForDeletion = GetById(id);
@@ -68,21 +62,5 @@ namespace DecisionTech.Repository
                 Collection.Remove(objectForDeletion);
             }
         }
-
-        //public void Remove(T entity)
-        //{
-        //    Collection.Remove(entity);
-        //}
-
-        //public T Update(T entity)
-        //{
-        //    //it's not really possible to update the object inplace so remove and add again.
-        //    var entityForUpdate = GetById(entity.Id);
-
-        //    if (entityForUpdate != null) throw new KeyNotFoundException();
-
-        //    Add(entity);
-        //    return entity;
-        //}
     }
 }

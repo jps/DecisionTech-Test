@@ -46,8 +46,6 @@
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="InMemoryRepository.cs" />
-    <Compile Include="BasketRepository.cs" />
-    <Compile Include="Interfaces\IBasketRepository.cs" />
     <Compile Include="Interfaces\IOfferRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
     <Compile Include="OfferRepository.cs" />

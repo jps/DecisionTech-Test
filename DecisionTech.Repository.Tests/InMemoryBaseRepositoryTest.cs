@@ -47,7 +47,6 @@ namespace DecisionTech.Repository.Tests
         #endregion
         #region GetManyByIds
 
-
         [Test]
         public void InMemoryBaseRepositoryTest_GetManyByIds_When_Element_Present_For_Key_Should_Return_Element()
         {
@@ -117,11 +116,10 @@ namespace DecisionTech.Repository.Tests
             (initCount + 1).Should().Be(countAfterAdd);
         }
 
-
         #endregion
 
-
         #region TestClasses
+
         private class TestModel : IEntity<int>
         {
             public int Id { get; set; }

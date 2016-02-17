@@ -18,7 +18,7 @@ namespace DecisionTech.Repository.Tests
             _offerRepository = new OfferRepository(FakeOffers.Data());
         }
 
-        #region GetByName
+        #region GetOffersByPurchasedProductIds
 
         [Test]
         public void OfferRepository_GetOffersByPurchasedProductIds_When_No_Matches_Return_Empty_Collection()

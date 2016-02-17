@@ -12,8 +12,5 @@ namespace DecisionTech.Repository.Interfaces
         IEnumerable<T> GetManyByIds(params TKey[] ids);
         T Add(T entity);
         int Count();
-
-        //T Update(T entity);
-        //void RemoveById(TKey id);
     }
 }

@@ -43,6 +43,5 @@ namespace DecisionTech.Repository.Tests
         }
 
         #endregion
-
     }
 }
