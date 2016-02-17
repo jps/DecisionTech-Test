@@ -10,5 +10,10 @@ namespace DecisionTech.Repository
         {
             //Empty
         }
+
+        public IEnumerable<Offer> GetOffersByPurchasedProducts(params int[] products)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
