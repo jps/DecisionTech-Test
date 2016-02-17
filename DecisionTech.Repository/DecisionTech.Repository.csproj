@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ploeh.AutoFixture, Version=3.40.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.3.40.0\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="InMemoryRepository.cs" />
+    <Compile Include="BasketRepository.cs" />
+    <Compile Include="Interfaces\IBasketRepository.cs" />
+    <Compile Include="Interfaces\IOfferInterface.cs" />
+    <Compile Include="Interfaces\IProductRepository.cs" />
+    <Compile Include="OfferInterface.cs" />
+    <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +59,9 @@
       <Project>{9e1d1ea9-6fa4-4fab-b7d2-36b7d35d7e69}</Project>
       <Name>DecisionTech.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
